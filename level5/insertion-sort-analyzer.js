@@ -14,6 +14,8 @@ function insertionSortAnalyzer(arr, comparator) {
         arr[j] = arr[j - 1];
         arr[j - 1] = temp;
         swaps++;
+      } else {
+        break;
       }
     }
   }
