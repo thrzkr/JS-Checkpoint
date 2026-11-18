@@ -6,11 +6,9 @@ function insertionSortAnalyzer(arr, comparator) {
   // Grow a sorted prefix by moving each next value left while it belongs earlier.
   for (let i = 1; i < arr.length; i++) {
     for (let j = i; j > 0; j--) {
-      // Count every adjacent comparison, including comparisons that do not swap.
-      iterations++;
+      iterations++; // Count every adjacent comparison, including comparisons that do not swap.
       if (comparator(arr[j], arr[j - 1]) < 0) {
-        // Swap neighboring out-of-order values and record the operation.
-        let temp = arr[j];
+        let temp = arr[j]; // Swap neighboring out-of-order values and record the operation.
         arr[j] = arr[j - 1];
         arr[j - 1] = temp;
         swaps++;
