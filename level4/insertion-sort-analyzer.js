@@ -3,12 +3,11 @@ function insertionSortAnalyzer(arr, comparator) {
   let iterations = 0;
   let swaps = 0;
 
-  // Grow a sorted prefix by moving each next value left while it belongs earlier.
   for (let i = 1; i < arr.length; i++) {
     for (let j = i; j > 0; j--) {
-      iterations++; // Count every adjacent comparison, including comparisons that do not swap.
+      iterations++; 
       if (comparator(arr[j], arr[j - 1]) < 0) {
-        let temp = arr[j]; // Swap neighboring out-of-order values and record the operation.
+        let temp = arr[j]; 
         arr[j] = arr[j - 1];
         arr[j - 1] = temp;
         swaps++;
@@ -18,7 +17,6 @@ function insertionSortAnalyzer(arr, comparator) {
     }
   }
 
-  // Return the mutated array together with the algorithm's operation counts.
   return {
     sortedArray: arr,
     iterations,
